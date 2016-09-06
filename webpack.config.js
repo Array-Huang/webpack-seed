@@ -159,12 +159,6 @@
         routerModule: path.resolve(libsDir, 'router.module'),
 
         libs: path.resolve(libsDir, 'libs.module'),
-        alertify: path.resolve(libsDir, 'alertify.module'),
-        validateModule: path.resolve(libsDir, 'validate.module'),
-        widgetModule: path.resolve(libsDir, 'widget.module'),
-        momentModule: path.resolve(libsDir, 'moment.module'),
-        mapModule: path.resolve(libsDir, 'map.module'),
-        uploadModule: path.resolve(libsDir, 'upload.module'),
 
         /* less */
         lessDir: path.resolve(publicDir, 'less'),

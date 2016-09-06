@@ -42,14 +42,7 @@
     "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
-    "avalon2": "^2.1.7",
-    "blueimp-md5": "^2.3.0",
-    "bootbox": "^4.4.0",
     "bootstrap": "^3.3",
-    "bootstrap-paginator": "^1.0.2",
-    "jquery": "^1.12.4",
-    "judgejs": "^0.8.4",
-    "moment": "^2.14.1",
-    "toastr": "^2.1.2"
+    "jquery": "^1.12.4"
   }
 }
