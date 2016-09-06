@@ -1,10 +1,15 @@
 # webpack-seed
 
 ## 项目介绍
-本项目是一个利用webpack架构的多页**web app**脚手架，其特点如下：
+本项目是一个利用webpack架构的**web app**脚手架，其特点如下：
+- 更适合多页应用。
 - 既可实现全后端分离，也可以生成后端渲染所需要的模板。
-- 引入layout和component的概念，方便页面布局、组件的重用，妈妈再也不用担心我是选SPA呢还是Iframe了，咱们都！不！需！要！
-- 编译后的程序不依赖于外部的资源，可以整体放到CDN上
+- 引入layout和component的概念，方便多页面间对布局、组件的重用，妈妈再也不用担心我是选SPA呢还是Iframe了，咱们都！不！需！要！
+- 编译后的程序不依赖于外部的资源（包括css、font、图片等资源都做了迁移），可以整体放到CDN上。
+- 已整合兼容IE8+的跨域方案。
+- 整合Bootstrap3(利用webpack按需打包)及主题SB-Admin，但其实换掉也很简单，或者干脆不用CSS框架也行。
+- 不含Js框架（jQuery不算框架，谢谢）。在我原本的项目中，是用avalon2作为Js框架的，但考虑到脚手架本身并不需要Js框架，同时我也希望这个项目保持精简，因此决定剔除掉avalon2的部分。
+- 整合iconfont（http://www.iconfont.cn/）作为字体图标方案，需要什么图标就自己上iconfont那打包下载下来，替换掉`src/public-resource/iconfont`内的文件。
 
 ## 使用说明
 
