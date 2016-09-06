@@ -16,7 +16,7 @@
   var logicDir = path.resolve(publicDir, './logic');
   var libsDir = path.resolve(publicDir, './libs');
   var configDir = path.resolve(publicDir, './config');
-  var componentsDir = path.resolve(publicDir, './components');
+  // var componentsDir = path.resolve(publicDir, './components');
   var layoutDir = path.resolve(publicDir, './layout');
 
   // 生成文件目录
@@ -38,7 +38,6 @@
   */
   var commonsChunkPlugin = new webpack.optimize.CommonsChunkPlugin({
     name: 'commons',      // 需要注意的是，chunk的name不能相同！！！
-    // filename: '[name].bundle.[chunkhash].js',
     filename: '[name].bundle.js',
     minChunks: 4,
   });
@@ -55,7 +54,6 @@
   var configPlugins = [
     providePlugin,      // 全局shimming
     commonsChunkPlugin,
-    // new ExtractTextPlugin('styles/[name].[contentHash].css'),
     new ExtractTextPlugin('[name]/styles.css'),
     new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /zh-cn/),   // 指定只加载zh-cn的locale包
   ];
@@ -81,14 +79,9 @@
     output: {
       path: buildDir,
       publicPath: '../../../../build/',
-      // filename: '[name]/entry.[chunkhash].js',    // [name]表示entry每一项中的key，用以批量指定生成后文件的名称
       filename: '[name]/entry.js',    // [name]表示entry每一项中的key，用以批量指定生成后文件的名称
       chunkFilename: '[id].bundle.js',
     },
-    // 预先用<script>全局引入的js
-    // externals: {
-    //   jquery: '$',
-    // },
     module: {
       preLoaders: [{
         test: /\.js$/,
@@ -96,7 +89,7 @@
         include: [
           pagesDir, publicDir,
         ],
-        exclude: [vendorDir, buildDir, /city_data/, /city-data-for-picker/, /bootstrap/],
+        exclude: [vendorDir, buildDir, /bootstrap/],
       }],
       // loader的配置
       loaders: [
@@ -113,10 +106,6 @@
           test: /\.less$/,
           exclude: /node_modules|bootstrap/,
           loader: ExtractTextPlugin.extract('css?minimize&-autoprefixer!postcss!less'),
-        },
-        {
-          test: /^avalonConfig$/,
-          loader: 'exports?avalon2',
         },
         {
           test: /\.js$/,
@@ -162,22 +151,8 @@
         configDir: configDir,
 
         /* vendor */
-        /* avalon 相关 */
-        // avalon: path.resolve(vendorDir, 'avalon/avalon.shim.min'),
-        // avalon: path.resolve(vendorDir, 'avalon'),
-        avalon: 'avalon2/dist/avalon',
         /* bootstrap 相关 */
         metisMenu: path.resolve(vendorDir, 'metisMenu/'),
-        paginator: 'bootstrap-paginator',
-        datetimepicker: path.resolve(vendorDir, 'bootstrap/datetimepicker/bootstrap-datetimepicker.min'),
-        datetimepicker_zhCN: path.resolve(vendorDir, 'bootstrap/datetimepicker/bootstrap-datetimepicker.zh-CN'),
-        /* jquery 相关 */
-        // placeholder: 'jquery-placeholder',
-        /* 独立库 */
-        store: path.resolve(vendorDir, 'store.min'),
-        md5: 'blueimp-md5',
-        spin: path.resolve(vendorDir, 'spin.min'),
-        webuploader: path.resolve(vendorDir, 'webuploader/webuploader.noimage'),
 
         /* libs */
         withoutJqueryModule: path.resolve(libsDir, 'without-jquery.module'),
@@ -194,19 +169,7 @@
         /* less */
         lessDir: path.resolve(publicDir, 'less'),
 
-
         /* components */
-        // 地区选择器
-        citySelectModule: path.resolve(componentsDir, 'city-select/city_select.module'),
-        cityPickerModule: path.resolve(componentsDir, 'city-select/city-picker.module'),
-        cityData: path.resolve(componentsDir, 'city-select/city_data'),
-        cityDataForPicker: path.resolve(componentsDir, 'city-select/city-data-for-picker.min'),
-        // 车辆选择器
-        carPicker: path.resolve(componentsDir, 'car-picker/car-picker.viewmodel'),
-        // 司机选择器
-        driverPicker: path.resolve(componentsDir, 'driver-picker/driver-picker.viewmodel'),
-        vmSideMenu: path.resolve(componentsDir, 'side-menu/side-menu.viewmodel'),
-        vmTopNav: path.resolve(componentsDir, 'top-nav/top-nav.viewmodel'),
 
         /* layout */
         layout: path.resolve(layoutDir, 'layout/html'),
@@ -215,16 +178,7 @@
         /* logic */
         cm: path.resolve(logicDir, 'common.module'),
         cp: path.resolve(logicDir, 'common.page'),
-        userModule: path.resolve(logicDir, 'user.module'),
-        appModule: path.resolve(logicDir, 'app.module'),
-        carModule: path.resolve(logicDir, 'car.module'),
-        driverModule: path.resolve(logicDir, 'driver.module'),
-        walletModule: path.resolve(logicDir, 'wallet.module'),
-        shortcutModule: path.resolve(logicDir, 'shortcut.module'),
-        alertModule: path.resolve(logicDir, 'alert.module'),
-        orderModule: path.resolve(logicDir, 'order.module'),
         /* config */
-        avalonConfig: path.resolve(configDir, 'avalon.config'),
         configModule: path.resolve(configDir, 'common.config'),
         bootstrapConfig: path.resolve(configDir, 'bootstrap.config'),
       },

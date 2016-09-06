@@ -7,7 +7,4 @@ module.exports = {
   images: {
     'login-bg': require('!file-loader?name=static/images/[name].[ext]!../imgs/login-bg.jpg'),
   },
-  swf: {
-    webuploader: require('!file-loader?name=static/swf/[name].[ext]!../../../vendor/webuploader/Uploader.swf'),
-  },
 };
