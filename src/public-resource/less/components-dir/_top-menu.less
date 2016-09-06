@@ -1,0 +1,56 @@
+.navbar {
+  margin-bottom: 0;
+}
+
+.navbar-top-links {
+  margin-right: 15px;
+
+  li {
+    display: inline-block;
+
+    a {
+      padding: 15px;
+      // min-height: 50px;
+    }
+  }
+
+  .dropdown-menu li {
+    display: block;
+
+    a {
+      padding: 3px 20px;
+      // min-height: 0;
+
+      div {
+        white-space: normal;
+      }
+    }
+  }
+
+  .dropdown-messages, .dropdown-tasks, .dropdown-alerts {
+    width: 310px;
+    min-width: 0;
+  }
+
+  .dropdown-messages {
+    margin-left: 5px;
+  }
+
+  .dropdown-tasks {
+    margin-left: -59px;
+  }
+
+  .dropdown-alerts {
+    margin-left: -123px;
+  }
+
+  .dropdown-user {
+    right: 0;
+    left: auto;
+  }
+}
+@media (min-width: 768px) {
+  .navbar-right {
+    margin-right: 15px;
+  }    
+}

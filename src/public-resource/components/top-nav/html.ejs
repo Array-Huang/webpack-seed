@@ -1,0 +1,41 @@
+<nav class="navbar navbar-default" role="navigation">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="<%= constructInsideUrl('index/index') %>">XXX管理后台</a>
+    </div>
+    <!-- /.navbar-header -->
+
+    <ul class="nav navbar-top-links navbar-right" id="top-menu">
+    <li class="dropdown">
+        <a class="dropdown-toggle" href="<%= constructInsideUrl('alert/index') %>">
+            <i class="iconfont icon-alert"></i>  <span class="badge badge-important unread-count">12</span>
+        </a>
+    </li>
+    <!-- /.dropdown -->
+    <li class="dropdown user-menu">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:;">
+            <i class="iconfont icon-mine"></i> <span>Mr.Bean</span>  <i class="iconfont icon-triangle-down"></i>
+        </a>
+        <ul class="dropdown-menu dropdown-user">
+            <li>
+                <a href="<%= constructInsideUrl('user/modify-info') %>"><i class="iconfont icon-edit"></i> 修改车队资料</a>
+            </li>
+            <li>
+                <a href="<%= constructInsideUrl('user/edit-password') %>"><i class="iconfont icon-password"></i> 修改登录密码</a>
+            </li>
+            <li class="divider"></li>
+            <li>
+                <a href="javascript:;"><i class="iconfont icon-logout"></i> 登出</a>
+            </li>
+        </ul>
+        <!-- /.dropdown-user -->
+    </li>
+    <!-- /.dropdown -->
+</ul>
+<!-- /.navbar-top-links -->    
+</nav>

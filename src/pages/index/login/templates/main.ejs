@@ -1,0 +1,18 @@
+<style type="text/css">
+@media(min-width: 768px) {
+  #bg {
+    background: url(<%= BUILD_FILE.images['login-bg'] %>) top center no-repeat;
+  }
+}
+</style>
+<!--[if lt IE 9]>
+  <style type="text/css">
+    #bg {
+    background: url(<%= BUILD_FILE.images['login-bg'] %>) top center no-repeat;
+    }
+  </style>
+<![endif]-->
+<div id="bg">
+  <%= loginBoxHtml %>
+  <%= forgetPasswordHtml %>
+</div>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title><% if (pageTitle) { %> <%= pageTitle %> - <% } %> XXXX后台</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" /> 
+  <meta name="renderer" content="webkit" />
+
+  <!--[if lt IE 10]>
+    <script src="<%= BUILD_FILE.js.xdomain %>" slave="<%= SERVER_API_URL %>cors-proxy.html"></script>
+    <script src="<%= BUILD_FILE.js.html5shiv %>"></script>
+  <![endif]-->
+</head>
+<body>
+  <!--[if lt IE 9]>
+    <script src="<%= BUILD_FILE.js.respond %>"></script>
+  <![endif]-->

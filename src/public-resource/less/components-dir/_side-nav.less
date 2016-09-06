@@ -1,0 +1,64 @@
+.sidebar {
+  #side-menu {
+    visibility: hidden;
+  }
+  
+  ul li {
+    border-bottom: 1px solid darken(@gray-lightest, 6.5%);
+    a {
+      &.active {
+        background-color: @gray-lighter;
+      }
+    }
+  }
+
+  .sidebar-nav.navbar-collapse {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .sidebar-search {
+    padding: 15px;
+  }
+
+  .arrow {
+    float: right;
+
+    &.iconfont:before {
+      content: "\e639";
+    }
+  }
+
+  .active > a > .iconfont.arrow:before {
+    content: "\e62c";
+  }
+
+  .nav-second-level li, .nav-third-level li {
+    border-bottom: none !important;
+  }
+
+  .nav-second-level li a {
+    padding-left: 37px;
+  }
+
+  .nav-third-level li a {
+    padding-left: 52px;
+  }
+}
+
+@media(min-width:768px) {   //PC端
+  .sidebar {
+    z-index: 1;
+    position: absolute;
+    width: 250px;
+    top: @top-bar-height + @top-bar-boder-width;
+    bottom: 0;
+    overflow-y: auto;
+  }
+
+  .navbar-top-links .dropdown-messages,
+  .navbar-top-links .dropdown-tasks,
+  .navbar-top-links .dropdown-alerts {
+    margin-left: auto;
+  }
+}

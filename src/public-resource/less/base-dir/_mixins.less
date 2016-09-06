@@ -1,0 +1,62 @@
+// Mixins
+.full-screen() {
+  width: 100%;
+}
+
+.size(@width, @height) {
+  width: @width;
+  height: @height;
+}
+
+.fl() {
+  float: left;
+}
+
+.fr() {
+  float: right;
+}
+
+.clearfix() {
+  &:before,&:after{ 
+    content:""; 
+    display:table; 
+  } 
+  &:after{clear:both;} 
+  &{ 
+    *zoom:1;/*IE/7/6*/
+  }
+}
+
+.noselect() {
+  -moz-user-select:none;/*火狐*/
+  -webkit-user-select:none;/*webkit浏览器*/
+  -ms-user-select:none;/*IE10*/
+  -khtml-user-select:none;/*早期浏览器*/
+  user-select:none;
+}
+
+.block-center() {
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+}
+
+.text-ellipsis() {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cursorPointer() {
+  cursor: pointer;
+}
+.cursorPointer {
+  .cursorPointer();
+}
+
+.padding0() {
+  padding: 0;
+}
+.padding0 {
+  .padding0();
+}

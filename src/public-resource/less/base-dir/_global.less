@@ -1,0 +1,48 @@
+/* 全局通用style */
+* {
+  font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+}
+
+html, body {
+  .full-screen();
+  background-color: @gray-lightest;
+}
+
+a {
+  .cursorPointer();
+}
+
+/* 总容器 */
+#wrapper {
+  .full-screen();
+}
+
+#page-wrapper {
+  padding: 5px 5px 5px 5px;
+  background-color: white;
+
+  .page-header {
+    font-size: 20px;
+  }
+}
+@media(min-width:768px) {   //PC端
+  #page-wrapper {
+    position: absolute;
+    top: @top-bar-height + @top-bar-boder-width;
+    bottom: 0;
+    left: 250px;
+    right: 0;
+    padding: 10px 10px 10px 10px;
+    overflow-y: auto;
+    border-left: 1px solid darken(@gray-lightest, 6.5%);
+  }
+}
+
+.picvcode {
+  min-width: 80px;
+}
+
+/* 隐藏首屏加载页面时出现的花括号 */
+.ms-controller{
+   visibility: hidden
+}
