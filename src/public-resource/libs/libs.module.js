@@ -1,75 +1,4 @@
-const Spinner = require('spin');
-const store = require('store');
-
-const pf = {
-
-  /* ajax相关结束 */
-  /* 初始化spin */
-  _initSpinInstance() {
-    var opts = {
-      lines: 9, // The number of lines to draw
-      length: 23, // The length of each line
-      width: 18, // The line thickness
-      radius: 42, // The radius of the inner circle
-      scale: 0.5, // Scales overall size of the spinner
-      corners: 1, // Corner roundness (0..1)
-      color: '#000', // #rgb or #rrggbb or array of colors
-      opacity: 0.35, // Opacity of the lines
-      rotate: 0, // The rotation offset
-      direction: 1, // 1: clockwise, -1: counterclockwise
-      speed: 1, // Rounds per second
-      trail: 53, // Afterglow percentage
-      fps: 20, // Frames per second when using setTimeout() as a fallback for CSS
-      zIndex: 2e9, // The z-index (defaults to 2000000000)
-      className: 'spinner', // The CSS class to assign to the spinner
-      top: '50%', // Top position relative to parent
-      left: '50%', // Left position relative to parent
-      shadow: false, // Whether to render a shadow
-      hwaccel: false, // Whether to use hardware acceleration
-      position: 'absolute', // Element positioning
-    };
-    return new Spinner(opts);
-  },
-};
-
 const moduleExports = {
-  /*
-   * loading相关 开始
-   */
-  LoadingInstance: null,
-  /* 在button上显示loading */
-  buttonShowLoading($button) {
-    $button.prop('disabled', true);
-    $button.append('<i class="iconfont icon-loading iconfont--spin"></i>');
-    return this;
-  },
-  /* 消除button上的loading */
-  buttonHideLoading($button) {
-    $button.prop('disabled', false);
-    $button.find('i.icon-loading').remove();
-    return this;
-  },
-  /* 在屏幕中央显示loading */
-  showLoading(domContainer) {
-    this.LoadingInstance = this.LoadingInstance || pf._initSpinInstance();
-    this.LoadingInstance.spin();
-    domContainer = domContainer || document.getElementById('page-wrapper');
-    domContainer.appendChild(this.LoadingInstance.el);
-  },
-  /* 消除屏幕中央的loading */
-  hideLoading() {
-    if (!this.LoadingInstance) return;
-
-    this.LoadingInstance.stop();
-  },
-  /* 获取一个loading实例以方便添加到各种地方 */
-  getLoading() {
-    return pf._initSpinInstance();
-  },
-  /*
-   * loading相关 结束
-   */
-
   /**
    * URL相关 开始
    */
@@ -175,36 +104,6 @@ const moduleExports = {
     this.sendParamBetweenPages(targetPage, `event-${eventName}`, ret);
   },
 
-
-  /**
-   * avalon相关
-   */
-  /**
-   * 官方推荐、用来 mixin N个对象
-   * 实现利用object（多是ajax读取回来的）来修改viewmodel
-   * 参数说明：第一个参数必须是vm本身，其后紧接着需要mixin进vm的一个或多个object
-   */
-  assignVM(vm) {
-    for (let i = 1; i < arguments.length; i++) {
-      const nextSource = arguments[i];
-      if (nextSource && typeof nextSource !== 'object') continue;
-      let j;
-      for (j in vm) {
-        if (vm.hasOwnProperty(j) && nextSource.hasOwnProperty(j)) {
-          vm[j] = nextSource[j];
-        }
-      }
-    }
-    return vm;
-  },
-
-  transferNullToEmptyStringForObject(obj) {
-    $.each(obj, (key, val) => {
-      obj[key] = (val === null) ? '' : val;
-    });
-  },
-  /* avalon相关结束 */
-
   /* 格式化处理浮点型（带小数位） */
   formatFloat(num, pos) {
     pos = pos || 2;
@@ -223,27 +122,6 @@ const moduleExports = {
       }
     }
     return theRequest;
-  },
-
-  locStorage: {
-    set: function set(key, val) {
-      store.set(key, val);
-      return this;
-    },
-
-    get: function get(key) {
-      return store.get(key);
-    },
-
-    remove(key) {
-      store.remove(key);
-      return this;
-    },
-
-    clear() {
-      store.clear();
-      return this;
-    },
   },
 
   tooltip: {

@@ -4,11 +4,14 @@
   "description": "This is a seed for programe built by webpack",
   "scripts": {
     "build": "webpack --progress --colors",
-    "watch": "webpack --progress --colors --watch",
-    "server": "webpack-dev-server --inline --devtool eval"
+    "watch": "webpack --progress --colors --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Array-Huang/webpack-seed.git"
   },
   "author": "Array Huang",
-  "license": "MIT License",
+  "license": "MIT",
   "devDependencies": {
     "autoprefixer": "^6.4.0",
     "babel-core": "^6.7.7",
