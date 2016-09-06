@@ -1,0 +1,78 @@
+<div id="page-wrapper">
+  <div class="container-fluid" >
+    <h2 class="page-header"><%= pageTitle %></h2>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="panel panel-default" id="filter-panel">
+          <div class="panel-heading">
+            消息通知筛选条件
+          </div>
+          <!-- /.panel-heading -->
+          <div class="panel-body">
+            <form class="form-inline">
+              <div class="form-group">
+                <label for="status-select">阅读状态：</label>
+                <select class="form-control" id="status-select">
+                  <option value="0">全部</option>
+                  <option value="1">已读</option>
+                  <option value="2">未读</option>
+                </select>
+              </div>
+              <button type="button" class="btn btn-primary">确认筛选</button>
+            </form>
+          </div>
+          <!-- /.panel-body -->
+        </div>
+      </div>
+    </div>
+
+    <!-- /.row -->
+    <div class="row">
+      <div class="col-md-12">
+        <div class="panel panel-default" id="main-panel">
+          <div class="panel-heading">
+            消息通知列表
+          </div>
+          <div class="panel-body">
+            <div class="table-container table-responsive">
+              <table class="table table-hover ">
+                <thead>
+                  <tr>
+                    <th>
+                      <input type="checkbox">
+                    </th>
+                    <th>通知时间</th>
+                    <th>内容</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <input type="checkbox" value="543">
+                    </td>
+                    <td>2016-08-01 08:53</td>
+                    <td>抱歉,您未通过平台审核！原因：2333</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="checkbox" value="542">
+                    </td>
+                    <td>2016-08-01 08:52</td>
+                    <td>系统已赠送了抵用券到您的账户，请在指定规则条件内使用。</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="text-center">
+              <ul class="paginator-container"></ul>
+            </div>
+          </div>
+          <div class="panel-footer text-center">
+            <button type="button" class="btn btn-success">设置为已读</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

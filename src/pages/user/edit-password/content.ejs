@@ -1,0 +1,48 @@
+<div id="page-wrapper">
+  <div ms-controller="user-edit-password">
+    <div class="container-fluid">
+      <h2 class="page-header"><%= pageTitle %></h2>
+      <div class="row">
+        <div class="col-md-8 col-lg-6">
+          <form>
+            <div class="form-group">
+              <label>手机号码(登录时使用的账号)</label>
+              <input type="number" class="form-control" />
+            </div>
+            <div class="form-group form-required">
+              <label>新密码</label>
+              <input type="password" class="form-control" />
+            </div>
+            <div class="form-group form-required">
+              <label>再次输入新密码</label>
+              <input type="password" class="form-control" />
+            </div>
+            <div class="form-group form-required">
+              <label>图片验证码</label>
+              <div class="input-group">
+                <span class="input-group-addon padding0">
+                  <img class="picvcode" src="data:image/jpeg;base64,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" />
+                </span>
+                <input type="text" class="form-control" placeholder="填写左侧图片验证码">
+              </div>
+            </div>
+            <div class="form-group form-required">
+              <label>短信验证码</label>
+              <div class="input-group">
+                <input type="text" class="form-control" />
+                <span class="input-group-btn">
+                  <button class="btn btn-info" type="button">获取短信验证码</button>
+                </span>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 text-center">
+          <button id="btn-submit" type="button" class="btn btn-success btn-lg">确认修改密码</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

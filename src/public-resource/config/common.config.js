@@ -3,6 +3,8 @@ const moduleExports = {
   DIRS: {
     BUILD_FILE: buildFileConfig,
   },
+
+  PAGE_ROOT_PATH: '../../../build/',
 };
 
 moduleExports.WEBUPLOADER = {
