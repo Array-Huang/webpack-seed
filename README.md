@@ -30,5 +30,49 @@ $ webpack-dev-server
 
  4. 打开浏览器，在地址栏里输入`http://localhost:8080`，Duang！页面就出来了！
 
+## 目录结构说明
+```
+├─build # 编译后生成的所有代码、资源（图片、字体等，虽然只是简单的从源目录迁移过来）
+├─node_modules # 利用npm管理的所有包及其依赖
+├─vendor # 所有不能用npm管理的第三方库
+├─.babelrc # babel的配置文件
+├─.eslintrc # ESLint的配置文件
+├─index.html # 仅作为重定向使用
+├─package.json # npm的配置文件
+├─webpack.config.js # webpack的配置文件
+├─src # 当前项目的源码
+    ├─pages # 各个页面独有的部分，如入口文件、只有该页面使用到的css、模板文件等
+    │  ├─alert # 业务模块
+    │  │  └─index # 具体页面
+    │  ├─index # 业务模块
+    │  │  ├─index # 具体页面
+    │  │  └─login # 具体页面
+    │  │      └─templates # 如果一个页面的HTML比较复杂，可以分成多块再拼在一起
+    │  └─user # 业务模块
+    │      ├─edit-password # 具体页面
+    │      └─modify-info # 具体页面
+    └─public-resource # 各个页面使用到的公共资源
+        ├─components # 组件，可以是纯HTML，也可以包含js/css/image等，看自己需要
+        │  ├─footer # 页尾
+        │  ├─header # 页头
+        │  ├─side-menu # 侧边栏
+        │  └─top-nav # 顶部菜单
+        ├─config # 各种配置文件
+        ├─iconfont # iconfont的字体文件
+        ├─imgs # 公用的图片资源
+        ├─layout # UI布局，组织各个组件拼起来，因应需要可以有不同的布局套路
+        │  ├─layout # 具体的布局套路
+        │  └─layout-without-nav # 具体的布局套路
+        ├─less # less文件，用sass的也可以，又或者是纯css
+        │  ├─base-dir
+        │  ├─components-dir # 如果组件本身不需要js的，那么要加载组件的css比较困难，我建议可以直接用less来加载
+        │  └─base.less # 组织所有的less文件
+        ├─libs # 与业务逻辑无关的库都可以放到这里
+        └─logic # 业务逻辑
+```
+
+## 更新日志
+### 1.0.0
+由于本脚手架是直接从我负责的项目中提炼出来的，因此已具备投入生产环境的能力，故直接定义版本号为1.0.0
 
   [1]: http://www.iconfont.cn/
