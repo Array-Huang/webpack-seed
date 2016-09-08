@@ -55,7 +55,6 @@
     providePlugin,      // 全局shimming
     commonsChunkPlugin,
     new ExtractTextPlugin('[name]/styles.css'),
-    new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /zh-cn/),   // 指定只加载zh-cn的locale包
   ];
 
   pageArr.forEach((page) => {
