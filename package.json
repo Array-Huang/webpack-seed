@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "This is a seed for programe built by webpack",
   "scripts": {
-    "build": "webpack --progress --colors",
+    "build": "node build-script.js && webpack --progress --colors",
     "watch": "webpack --progress --colors --watch"
   },
   "repository": {
