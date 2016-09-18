@@ -1,5 +1,7 @@
 /* 依赖关系 Start */
   var webpack = require('webpack');
+  var fs = require('fs');
+  var rimraf = require('rimraf');
   var path = require('path');
   var HtmlWebpackPlugin = require('html-webpack-plugin');
   var ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -69,6 +71,11 @@
   });
 
 /* 拼接config的各部分 End */
+/* build前做的一些微小的工作 Start */
+  rimraf(buildDir, fs, function cb() {
+    console.log('build目录已清空');
+  });
+/* build前做的一些微小的工作 End */
 /* 正式集成配置 Start */
   module.exports = {
     // 入口文件(js)的源文件路径的配置，通常来说一个页面对应一个入口文件，但无硬性规定；在页面中通过<script>引入入口文件
