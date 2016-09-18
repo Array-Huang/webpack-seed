@@ -2,8 +2,8 @@ var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var path = require('path');
-var dirVars = require('./base/dir-vars.config.js');
-var pageArr = require('./base/page-entries.config.js');
+var dirVars = require('../base/dir-vars.config.js');
+var pageArr = require('../base/page-entries.config.js');
 
 /* 全局shimming */
 var providePlugin = new webpack.ProvidePlugin({

@@ -20,7 +20,7 @@ $ npm install --no-optional
 
  2. 编译程序，生成的所有代码在`build`目录内。
 ```
-$ npm run build # 有需要的话也可以用 npm run watch
+$ npm run build # 生成生产环境的代码。用npm run watch或npm run dev可生成开发环境的代码
 ```
 
  3. 启动服务器，推荐直接使用webpack-dev-server
@@ -39,7 +39,12 @@ $ webpack-dev-server
 ├─.eslintrc # ESLint的配置文件
 ├─index.html # 仅作为重定向使用
 ├─package.json # npm的配置文件
-├─webpack.config.js # webpack的配置文件
+├─webpack-config # 存放分拆后的webpack配置文件
+│   ├─base # 主要是存放一些变量
+│   ├─inherit # 存放生产环境和开发环境相同的部分，以供继承
+│   └─vendor # 存放webpack兼容第三方库所需的配置文件
+├─webpack.config.js # 生产环境的webpack配置文件（无实质内容，仅为组织整理）
+├─webpack.dev.config.js # 开发环境的webpack配置文件（无实质内容，仅为组织整理）
 ├─src # 当前项目的源码
     ├─pages # 各个页面独有的部分，如入口文件、只有该页面使用到的css、模板文件等
     │  ├─alert # 业务模块
@@ -74,5 +79,10 @@ $ webpack-dev-server
 ## 更新日志
 ### 1.0.0
 由于本脚手架是直接从我负责的项目中提炼出来的，因此已具备投入生产环境的能力，故直接定义版本号为1.0.0
+
+### 1.0.2
+- 编译文件前先清空build目录。
+- 分拆webpack配置文件，避免配置文件日益臃肿。
+- 分开生产环境和开发环境的webpack配置文件。其中，`npm run build`会调用生产环境的webpack配置文件(webpack.config.js)，而`npm run dev`和`npm run watch`会调用开发环境的配置文件。
 
   [1]: http://www.iconfont.cn/

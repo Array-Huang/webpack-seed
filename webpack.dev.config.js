@@ -7,7 +7,7 @@ module.exports = {
 
   resolve: require('./webpack-config/resolve.config.js'),
 
-  plugins: require('./webpack-config/plugins.product.config.js'),
+  plugins: require('./webpack-config/plugins.dev.config.js'),
 
   eslint: require('./webpack-config/vendor/eslint.config.js'),
 

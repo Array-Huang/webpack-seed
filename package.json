@@ -1,10 +1,11 @@
 {
   "name": "webpack-seed",
-  "version": "0.0.1",
-  "description": "This is a seed for programe built by webpack",
+  "version": "1.0.1",
+  "description": "This is a seed for web application built by webpack",
   "scripts": {
     "build": "node build-script.js && webpack --progress --colors",
-    "watch": "webpack --progress --colors --watch"
+    "dev": "node build-script.js && webpack --progress --colors --config ./webpack.dev.config.js",
+    "watch": "webpack --progress --colors --watch --config ./webpack.dev.config.js"
   },
   "repository": {
     "type": "git",
