@@ -28,12 +28,7 @@ module.exports = {
     {
       test: /\.js$/,
       exclude: /node_modules|vendor|bootstrap/,
-      loader: 'babel-loader',
-    },
-    {
-      test: /\.jsx$/,
-      exclude: /node_modules|vendor|bootstrap/,
-      loader: 'babel-loader',
+      loader: 'babel-loader?presets[]=es2015-loose&cacheDirectory&plugins[]=transform-runtime',
     },
     {
       test: /\.html$/,
