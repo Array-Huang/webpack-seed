@@ -4,10 +4,7 @@ module.exports = {
   preLoaders: [{
     test: /\.js$/,
     loader: 'eslint',
-    include: [
-      dirVars.pagesDir, dirVars.publicDir,
-    ],
-    exclude: [dirVars.vendorDir, dirVars.buildDir, /bootstrap/],
+    exclude: [dirVars.vendorDir, /node_modules/, /bootstrap/],
   }],
 
   loaders: [
