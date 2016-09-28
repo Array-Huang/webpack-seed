@@ -6,7 +6,8 @@
     "build": "node build-script.js && webpack --progress --colors",
     "dev": "node build-script.js && webpack --progress --colors --config ./webpack.dev.config.js",
     "watch": "webpack --progress --colors --watch --config ./webpack.dev.config.js",
-    "start": "webpack-dev-server --inline --devtool eval"
+    "start": "webpack-dev-server --inline --devtool eval",
+    "profile": "node build-script.js && webpack --colors --profile --display-modules"
   },
   "repository": {
     "type": "git",
