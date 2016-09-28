@@ -3,9 +3,10 @@ var moduleExports = {};
 
 // 源文件目录
 moduleExports.staticRootDir = path.resolve(__dirname, '../../'); // 项目根目录
+moduleExports.srcRootDir = path.resolve(moduleExports.staticRootDir, './src'); // 项目业务代码根目录
 moduleExports.vendorDir = path.resolve(moduleExports.staticRootDir, './vendor'); // 存放所有不能用npm管理的第三方库
-moduleExports.pagesDir = path.resolve(moduleExports.staticRootDir, './src/pages'); // 存放各个页面独有的部分，如入口文件、只有该页面使用到的css、模板文件等
-moduleExports.publicDir = path.resolve(moduleExports.staticRootDir, './src/public-resource'); // 存放各个页面使用到的公共资源
+moduleExports.pagesDir = path.resolve(moduleExports.srcRootDir, './pages'); // 存放各个页面独有的部分，如入口文件、只有该页面使用到的css、模板文件等
+moduleExports.publicDir = path.resolve(moduleExports.srcRootDir, './public-resource'); // 存放各个页面使用到的公共资源
 moduleExports.logicDir = path.resolve(moduleExports.publicDir, './logic'); // 存放公用的业务逻辑
 moduleExports.libsDir = path.resolve(moduleExports.publicDir, './libs');  // 与业务逻辑无关的库都可以放到这里
 moduleExports.configDir = path.resolve(moduleExports.publicDir, './config'); // 存放各种配置文件
