@@ -1,6 +1,7 @@
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
   styleLoader: ExtractTextPlugin.extract('css?minimize&-autoprefixer!postcss!less'),
+  // styleLoader: 'file?name=bootstrap.min.css!raw!css?minimize&-autoprefixer!postcss!less',
   scripts: {
     transition: true,
     alert: true,

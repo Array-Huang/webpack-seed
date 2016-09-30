@@ -22,7 +22,13 @@ var commonsChunkPlugin = new webpack.optimize.CommonsChunkPlugin({
 
 var extractTextPlugin = new ExtractTextPlugin('[name]/styles.css');
 
-var configPlugins = [providePlugin, commonsChunkPlugin, extractTextPlugin];
+var dllPlugin = new webpack.DllReferencePlugin({
+  context: dirVars.staticRootDir,
+  manifest: require('../../manifest.json'),
+  name: 'dll',
+});
+
+var configPlugins = [providePlugin, commonsChunkPlugin, extractTextPlugin, dllPlugin];
 
 pageArr.forEach((page) => {
   const htmlPlugin = new HtmlWebpackPlugin({
