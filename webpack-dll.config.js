@@ -11,6 +11,7 @@ module.exports = {
   entry: {
     dll: [
       'jquery', '!!bootstrap-webpack!bootstrapConfig',
+      'metisMenu/metisMenu.min', 'metisMenu/metisMenu.min.css',
     ],
   },
   plugins: [

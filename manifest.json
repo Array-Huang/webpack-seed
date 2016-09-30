@@ -17,6 +17,8 @@
     "./node_modules/bootstrap/js/popover.js": 84,
     "./node_modules/bootstrap/js/scrollspy.js": 85,
     "./node_modules/bootstrap/js/tab.js": 86,
-    "./node_modules/bootstrap/js/affix.js": 87
+    "./node_modules/bootstrap/js/affix.js": 87,
+    "./vendor/metisMenu/metisMenu.min.js": 88,
+    "./vendor/metisMenu/metisMenu.min.css": 89
   }
 }

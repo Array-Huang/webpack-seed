@@ -1,5 +1,5 @@
 require('!!bootstrap-webpack!bootstrapConfig');
-require('metisMenu/metisMenu.min.css');
+// require('metisMenu/metisMenu.min.css');
 require('iconfontDir/iconfont.css');
 require('lessDir/base.less');
 require('metisMenu/metisMenu.min');
