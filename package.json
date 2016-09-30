@@ -3,11 +3,12 @@
   "version": "1.0.1",
   "description": "This is a seed for web application built by webpack",
   "scripts": {
-    "build": "node build-script.js && webpack --progress --colors",
-    "dev": "node build-script.js && webpack --progress --colors --config ./webpack.dev.config.js",
+    "build": "node npm-scripts/before-build.script.js && webpack --progress --colors",
+    "dev": "node npm-scripts/before-build.script.js && webpack --progress --colors --config ./webpack.dev.config.js",
     "watch": "webpack --progress --colors --watch --config ./webpack.dev.config.js",
     "start": "webpack-dev-server --inline --devtool eval",
-    "profile": "node build-script.js && webpack --colors --profile --display-modules"
+    "profile": "node npm-scripts/before-build.script.js && webpack --colors --profile --display-modules",
+    "dll": "node npm-scripts/before-build-dll.script.js && webpack --progress --colors --config ./webpack-dll.config.js"
   },
   "repository": {
     "type": "git",
