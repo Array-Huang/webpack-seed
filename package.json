@@ -3,7 +3,7 @@
   "version": "1.0.1",
   "description": "This is a seed for web application built by webpack",
   "scripts": {
-    "build": "node npm-scripts/before-build.script.js && webpack --progress --colors",
+    "build": "node npm-scripts/before-build.script.js && webpack --progress --colors --bail",
     "dev": "node npm-scripts/before-build.script.js && webpack --progress --colors --config ./webpack.dev.config.js",
     "watch": "webpack --progress --colors --watch --config ./webpack.dev.config.js",
     "start": "webpack-dev-server --inline --devtool eval",
