@@ -36,6 +36,7 @@ pageArr.forEach((page) => {
     template: path.resolve(dirVars.pagesDir, `./${page}/html.js`),
     chunks: [page, 'commons'],
     hash: true, // 为静态资源生成hash值
+    xhtml: true,
   });
   configPlugins.push(htmlPlugin);
 });
