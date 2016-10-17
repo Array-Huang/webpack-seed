@@ -5,7 +5,7 @@
   "scripts": {
     "build": "node npm-scripts/before-build.script.js && webpack --progress --colors --bail",
     "dev": "node npm-scripts/before-build.script.js && webpack --progress --colors --config ./webpack.dev.config.js",
-    "watch": "webpack --progress --colors --watch --config ./webpack.dev.config.js",
+    "watch": "node npm-scripts/before-build.script.js && webpack --progress --colors --watch --config ./webpack.dev.config.js",
     "start": "webpack-dev-server --inline --devtool eval",
     "profile": "node npm-scripts/before-build.script.js && webpack --colors --profile --display-modules",
     "dll": "node npm-scripts/before-build-dll.script.js && webpack --progress --colors --config ./webpack-dll.config.js"
