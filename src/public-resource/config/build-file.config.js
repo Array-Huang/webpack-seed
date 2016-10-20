@@ -1,3 +1,4 @@
+require('!!file-loader?name=index.html!../../index.html');
 module.exports = {
   js: {
     xdomain: require('!!file-loader?name=static/js/[name].[ext]!../../../vendor/ie-fix/xdomain.all.js'),

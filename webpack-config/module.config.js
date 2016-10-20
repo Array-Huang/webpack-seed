@@ -49,7 +49,7 @@ module.exports = {
       // 专供iconfont方案使用的，后面会带一串时间戳，需要特别匹配到
       test: /\.(woff|woff2|svg|eot|ttf)\??.*$/,
       include: dirVars.srcRootDir,
-      loader: 'file?name=./static/fonts/[name].[ext]',
+      loader: 'file?name=static/fonts/[name].[ext]',
     },
   ],
 };

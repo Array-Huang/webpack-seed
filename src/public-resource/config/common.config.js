@@ -4,7 +4,7 @@ const moduleExports = {
     BUILD_FILE: buildFileConfig,
   },
 
-  PAGE_ROOT_PATH: '../../../build/',
+  PAGE_ROOT_PATH: '../../',
 };
 
 /* 帮助确定ie下CORS的代理文件 */
