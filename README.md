@@ -12,27 +12,27 @@
 - 整合[iconfont][1]作为字体图标方案，需要什么图标就自己上iconfont那打包下载下来，替换掉`src/public-resource/iconfont`内的文件。
 
 ## 使用说明
-1. 全局安装webpack和webpack-dev-server，如果已经装过那可以跳过这一步
+- 全局安装webpack和webpack-dev-server，如果已经装过那可以跳过这一步
 ```bash
 $ npm install --global webpack webpack-dev-server
 ```
 
-2. 本项目使用包管理工具NPM，因此需要先把本项目所依赖的包下载下来：
+- 本项目使用包管理工具NPM，因此需要先把本项目所依赖的包下载下来：
 ```
 $ npm install --no-optional
 ```
 
-3. 编译程序，生成的所有代码在`build`目录内。
+- 编译程序，生成的所有代码在`build`目录内。
 ```
 $ npm run build # 生成生产环境的代码。用npm run watch或npm run dev可生成开发环境的代码
 ```
 
-4. 启动服务器，推荐直接使用webpack-dev-server
+- 启动服务器，推荐直接使用webpack-dev-server
 ```
 $ npm run start
 ```
 
- 5. 打开浏览器，在地址栏里输入`http://localhost:8080`，Duang！页面就出来了！
+- 打开浏览器，在地址栏里输入`http://localhost:8080`，Duang！页面就出来了！
 
 ## CLI命令(npm scripts)
 | 命令            | 作用&效果          |
@@ -91,6 +91,9 @@ $ npm run start
 ```
 
 ## 更新日志
+
+### 2.0.0 (2016-10-21)
+把基础设施从项目里抽离出来，实现多项目共用同一套架构/基础设施。由于本项目肩负有教程示例的责任，且2.x版本变化极大，因此另辟一个新repo（[Array-Huang/webpack-seed-v2](https://github.com/Array-Huang/webpack-seed-v2)）来放置。
 
 ### 1.2.2 (2016-10-16)
 考虑到多个页面可能会共用html/js/css（例如**添加页面**和**修改页面**），在自动查找页面入口时，忽略以`_`开头的目录，因此，可以使用以`_`开头的目录来放置页面复用的资源。
