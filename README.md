@@ -19,7 +19,7 @@ $ npm install --global webpack webpack-dev-server
 
 - 本项目使用包管理工具NPM，因此需要先把本项目所依赖的包下载下来：
 ```
-$ npm install --no-optional
+$ npm install
 ```
 
 - 编译程序，生成的所有代码在`build`目录内。

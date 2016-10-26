@@ -46,7 +46,8 @@
     "precss": "^1.4.0",
     "rimraf": "^2.5.4",
     "style-loader": "^0.13.1",
-    "url-loader": "^0.5.7"
+    "url-loader": "^0.5.7",
+    "webpack": "^1.13.2"
   },
   "dependencies": {
     "babel-runtime": "^6.11.6",
