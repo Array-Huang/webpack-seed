@@ -112,6 +112,6 @@ $ npm run start
 - 分开生产环境和开发环境的webpack配置文件。其中，`npm run build`会调用生产环境的webpack配置文件(webpack.config.js)，而`npm run dev`和`npm run watch`会调用开发环境的配置文件。
 
 ### 1.0.0
-由于本脚手架是直接从我负责的项目中提炼出来的，因此已具备投入生产环境的能力，故直接定义版本号为1.0.0
+由于此脚手架已具备投入生产环境的能力，故直接定义版本号为1.0.0
 
   [1]: http://www.iconfont.cn/
