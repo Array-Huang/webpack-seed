@@ -9,7 +9,7 @@
     "start": "webpack-dev-server --inline --progress --compress --devtool eval --content-base build/ --open",
     "profile": "node npm-scripts/before-build.script.js && webpack --colors --profile --display-modules",
     "dll": "node npm-scripts/before-build-dll.script.js && webpack --progress --colors --config ./webpack-dll.config.js",
-    "analyse": "webpack-bundle-analyzer --port 8989 ./build/stats.json",
+    "analyse": "webpack --json > ./build/stats.json && webpack-bundle-analyzer --port 8989 ./build/stats.json",
     "analyze": "npm run analyse"
   },
   "repository": {
@@ -49,8 +49,7 @@
     "rimraf": "^2.5.4",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
-    "webpack": "^1.13.2",
-    "webpack-bundle-analyzer": "^2.1.1"
+    "webpack": "^1.13.2"
   },
   "dependencies": {
     "babel-runtime": "^6.11.6",
