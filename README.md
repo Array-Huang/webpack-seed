@@ -94,6 +94,9 @@ $ npm run start
 
 ## 更新日志
 
+### 1.3.1 (2016-12-01)
+改为利用`webpack --json`来生成**webpack-bundle-analyzer**生成包文件结构的可视化分析报告所需的json文件。
+
 ### 1.3.0 (2016-11-22)
 引入**webpack-bundle-analyzer**，用以生成打包文件结构的可视化分析报告。
 
