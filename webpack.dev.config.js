@@ -3,7 +3,7 @@ module.exports = {
 
   output: require('./webpack-config/output.config.js'),
 
-  module: require('./webpack-config/module.config.js'),
+  module: require('./webpack-config/module.dev.config.js'),
 
   resolve: require('./webpack-config/resolve.config.js'),
 
@@ -16,10 +16,10 @@ module.exports = {
   devServer: {
     contentBase: './build/',
     host: 'localhost',
-    port: 9090, // 默认8080
+    port: 8080, // 默认8080
     inline: true, // 可以监控js变化
-    // hot: true, // 热启动
+    hot: true, // 热启动
     compress: true,
-    watchContentBase: true,
+    watchContentBase: false,
   },
 };

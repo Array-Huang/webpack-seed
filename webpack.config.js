@@ -3,7 +3,7 @@ module.exports = {
 
   output: require('./webpack-config/output.config.js'),
 
-  module: require('./webpack-config/module.config.js'),
+  module: require('./webpack-config/module.product.config.js'),
 
   resolve: require('./webpack-config/resolve.config.js'),
 

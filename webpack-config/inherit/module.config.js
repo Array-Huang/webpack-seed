@@ -1,5 +1,4 @@
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var dirVars = require('./base/dir-vars.config.js');
+var dirVars = require('../base/dir-vars.config.js');
 module.exports = {
   preLoaders: [{
     test: /\.js$/,
@@ -12,16 +11,6 @@ module.exports = {
     {
       test: require.resolve('jquery'),
       loader: 'expose?$!expose?jQuery',
-    },
-    {
-      test: /\.css$/,
-      exclude: /node_modules|bootstrap/,
-      loader: ExtractTextPlugin.extract('css?minimize&-autoprefixer!postcss'),
-    },
-    {
-      test: /\.less$/,
-      include: dirVars.srcRootDir,
-      loader: ExtractTextPlugin.extract('css?minimize&-autoprefixer!postcss!less'),
     },
     {
       test: /\.js$/,

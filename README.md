@@ -39,8 +39,7 @@ $ npm run start
 | --------------- | ------------- |
 | npm run build   | 根据`webpack.config.js`，build出一份生产环境的代码 |
 | npm run dev     | 根据`webpack.dev.config.js`，build出一份开发环境的代码 |
-| npm run watch   | 在`npm run dev`的基础上添加`-- watch`，实时监控源文件，建议开发时使用这项 |
-| npm run start   | 开启webpack-dev-server，然后就可以在 http://localhost:8080/ 查看成品了 |
+| npm run start   | 开启webpack-dev-server并自动打开浏览器，自动监测源码变动并实现LiveReload，**推荐实际开发时使用此项** |
 | npm run profile | 显示编译过程中每一项资源的耗时，用来调优的 |
 | npm run dll     | 生成Dll文件，每次升级第三方库时都需要重新执行一遍 |
 | npm run analyse  | 生成打包文件结构的可视化分析报告；注意请在`npm run build`或`npm run dev`后再执行 |
@@ -93,6 +92,9 @@ $ npm run start
 ```
 
 ## 更新日志
+
+### 1.4.1 (2017-01-24)
+支持js/css/less文件的热更新，但暂未支持模板文件。
 
 ### 1.3.1 (2016-12-01)
 改为利用`webpack --json`来生成**webpack-bundle-analyzer**生成包文件结构的可视化分析报告所需的json文件。
