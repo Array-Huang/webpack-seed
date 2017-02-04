@@ -1,7 +1,7 @@
 # webpack-seed
 
 ## 项目介绍
-本项目是一个利用webpack架构的**web app**脚手架，其特点如下：
+本项目是一个基于webpack架构的**web app**脚手架，其特点如下：
 - 更适合多页应用。
 - 既可实现全后端分离，也可以生成后端渲染所需要的模板。
 - 引入layout和component的概念，方便多页面间对布局、组件的重用，妈妈再也不用担心我是选SPA呢还是Iframe了，咱们都！不！需！要！
@@ -10,11 +10,12 @@
 - 整合Bootstrap3(利用webpack按需打包)及主题SB-Admin，但其实换掉也很简单，或者干脆不用CSS框架也行。
 - 不含Js框架（jQuery不算框架，谢谢）。在我原本的项目中，是用avalon2作为Js框架的，但考虑到脚手架本身并不需要Js框架，同时我也希望这个项目保持精简，因此决定剔除掉avalon2的部分。
 - 整合[iconfont][1]作为字体图标方案，需要什么图标就自己上iconfont那打包下载下来，替换掉`src/public-resource/iconfont`内的文件。
+- 本项目基于 ***webpack v1*** 和 ***webpack-dev-server v1***，全局和项目局部依赖都一样。
 
 ## 使用说明
 - 全局安装webpack和webpack-dev-server和webpack-bundle-analyzer
 ```bash
-$ npm install --global webpack webpack-dev-server webpack-bundle-analyzer
+$ npm install --global webpack@^1.13.2 webpack-dev-server@^1.16.2 webpack-bundle-analyzer@^2.1.1
 ```
 
 - 本项目使用包管理工具NPM，因此需要先把本项目所依赖的包下载下来：
