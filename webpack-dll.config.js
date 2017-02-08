@@ -14,7 +14,8 @@ module.exports = {
       或是css/less/图片/字体文件等资源，但注意要在module参数配置好相应的loader
     */
     dll: [
-      'jquery', '!!bootstrap-webpack!bootstrapConfig',
+      'jquery',
+      'bootstrap/dist/css/bootstrap.min.css', 'bootstrap/dist/js/bootstrap.min.js',
       'metisMenu/metisMenu.min', 'metisMenu/metisMenu.min.css',
     ],
   },
@@ -32,7 +33,12 @@ module.exports = {
       'window.$': 'jquery',
     }),
     new ExtractTextPlugin('[name].css'), // 打包css/less的时候会用到ExtractTextPlugin
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false,
+      },
+    }),
   ],
-  module: require('./webpack-config/module.config.js'), // 沿用业务代码的module配置
+  module: require('./webpack-config/module.product.config.js'), // 沿用业务代码的module配置
   resolve: require('./webpack-config/resolve.config.js'), // 沿用业务代码的resolve配置
 };

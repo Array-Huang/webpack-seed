@@ -10,6 +10,12 @@ moduleConfig.loaders.push({
 });
 
 moduleConfig.loaders.push({
+  test: /\.css$/,
+  include: /bootstrap/,
+  loader: ExtractTextPlugin.extract('css'),
+});
+
+moduleConfig.loaders.push({
   test: /\.less$/,
   include: dirVars.srcRootDir,
   loader: ExtractTextPlugin.extract('css?minimize&-autoprefixer!postcss!less'),

@@ -40,5 +40,11 @@ module.exports = {
       include: dirVars.srcRootDir,
       loader: 'file?name=static/fonts/[name].[ext]',
     },
+    {
+      // 专供bootstrap方案使用的，忽略bootstrap自带的字体文件
+      test: /\.(woff|woff2|svg|eot|ttf)$/,
+      include: /bootstrap/,
+      loader: 'null',
+    },
   ],
 };

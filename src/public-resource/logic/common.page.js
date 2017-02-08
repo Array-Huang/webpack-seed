@@ -1,8 +1,8 @@
-require('!!bootstrap-webpack!bootstrapConfig');
-// require('metisMenu/metisMenu.min.css');
+require('bootstrap/dist/css/bootstrap.min.css');
 require('iconfontDir/iconfont.css');
 require('lessDir/base.less');
 require('metisMenu/metisMenu.min');
+require('bootstrap/dist/js/bootstrap.min.js');
 
 $(() => {
   $('#side-menu').metisMenu();

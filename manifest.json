@@ -1,24 +1,11 @@
 {
   "name": "dll",
   "content": {
-    "./node_modules/jquery/dist/jquery.js": 71,
-    "./node_modules/expose-loader/index.js?jQuery!./node_modules/jquery/dist/jquery.js": 70,
-    "./node_modules/bootstrap-webpack/index.loader.js!./src/public-resource/config/bootstrap.config.js": 72,
-    "./node_modules/extract-text-webpack-plugin/loader.js?{\"remove\":true}!./node_modules/css-loader/index.js?minimize&-autoprefixer!./node_modules/postcss-loader/index.js!./node_modules/less-loader/index.js!./node_modules/bootstrap-webpack/bootstrap-styles.loader.js!./src/public-resource/config/bootstrap.config.js": 73,
-    "./node_modules/bootstrap-webpack/bootstrap-scripts.loader.js!./src/public-resource/config/bootstrap.config.js": 75,
-    "./node_modules/bootstrap/js/transition.js": 76,
-    "./node_modules/bootstrap/js/alert.js": 77,
-    "./node_modules/bootstrap/js/button.js": 78,
-    "./node_modules/bootstrap/js/carousel.js": 79,
-    "./node_modules/bootstrap/js/collapse.js": 80,
-    "./node_modules/bootstrap/js/dropdown.js": 81,
-    "./node_modules/bootstrap/js/modal.js": 82,
-    "./node_modules/bootstrap/js/tooltip.js": 83,
-    "./node_modules/bootstrap/js/popover.js": 84,
-    "./node_modules/bootstrap/js/scrollspy.js": 85,
-    "./node_modules/bootstrap/js/tab.js": 86,
-    "./node_modules/bootstrap/js/affix.js": 87,
-    "./vendor/metisMenu/metisMenu.min.js": 88,
-    "./vendor/metisMenu/metisMenu.min.css": 89
+    "./node_modules/jquery/dist/jquery.js": 3,
+    "./node_modules/expose-loader/index.js?jQuery!./node_modules/jquery/dist/jquery.js": 2,
+    "./node_modules/bootstrap/dist/css/bootstrap.min.css": 4,
+    "./node_modules/bootstrap/dist/js/bootstrap.min.js": 11,
+    "./vendor/metisMenu/metisMenu.min.js": 12,
+    "./vendor/metisMenu/metisMenu.min.css": 13
   }
 }

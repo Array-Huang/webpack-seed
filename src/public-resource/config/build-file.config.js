@@ -1,7 +1,6 @@
 require('!!file-loader?name=index.html!../../index.html');
 module.exports = {
   js: {
-    xdomain: require('!!file-loader?name=static/js/[name].[ext]!../../../vendor/ie-fix/xdomain.all.js'),
     html5shiv: require('!!file-loader?name=static/js/[name].[ext]!../../../vendor/ie-fix/html5shiv.min.js'),
     respond: require('!!file-loader?name=static/js/[name].[ext]!../../../vendor/ie-fix/respond.min.js'),
   },

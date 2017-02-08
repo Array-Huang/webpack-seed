@@ -1,4 +1,3 @@
-require('!!bootstrap-webpack!bootstrapConfig');
 require('lessDir/base.less');
 require('./page.less');
 
