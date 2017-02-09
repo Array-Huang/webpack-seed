@@ -15,9 +15,9 @@ const moduleExports = {
     return this;
   },
   run(content) {
-    const headerRenderData = Object.assign({}, config, pf);
+    const componentRenderData = Object.assign({}, config, pf);
     const renderData = {
-      header: header(headerRenderData),
+      header: header(componentRenderData),
       footer: footer(),
       content,
     };

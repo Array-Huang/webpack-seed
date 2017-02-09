@@ -3,6 +3,7 @@ require('iconfontDir/iconfont.css');
 require('lessDir/base.less');
 require('metisMenu/metisMenu.min');
 require('bootstrap/dist/js/bootstrap.min.js');
+require('vendorDir/promise.min');
 
 $(() => {
   $('#side-menu').metisMenu();

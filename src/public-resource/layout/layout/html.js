@@ -21,12 +21,12 @@ const moduleExports = {
 
   /* 整合各公共组件和页面实际内容，最后生成完整的HTML文档 */
   run(content) {
-    const headerRenderData = Object.assign({}, config, pf); // 页头组件需要加载css/js等，因此需要比较多的变量
+    const componentRenderData = Object.assign({}, config, pf); // 页头组件需要加载css/js等，因此需要比较多的变量
     const renderData = {
-      header: header(headerRenderData),
+      header: header(componentRenderData),
       footer: footer(),
-      topNav: topNav(pf),
-      sideMenu: sideMenu(pf),
+      topNav: topNav(componentRenderData),
+      sideMenu: sideMenu(componentRenderData),
       content,
     };
     return layout(renderData);
