@@ -6,6 +6,7 @@ module.exports = {
     /* 各种目录 */
     iconfontDir: path.resolve(dirVars.publicDir, 'iconfont/'),
     configDir: dirVars.configDir,
+    vendorDir: dirVars.vendorDir,
 
     /* vendor */
     /* bootstrap 相关 */
