@@ -5,7 +5,6 @@ const header = require('../../components/header/html.ejs'); // 页头的模板
 const footer = require('../../components/footer/html.ejs'); // 页脚的模板
 const topNav = require('../../components/top-nav/html.ejs'); // 顶部栏的模板
 const sideMenu = require('../../components/side-menu/html.ejs'); // 侧边栏的模板
-const dirsConfig = config.DIRS;
 
 /* 整理渲染公共部分所用到的模板变量 */
 const pf = {
@@ -22,7 +21,7 @@ const moduleExports = {
 
   /* 整合各公共组件和页面实际内容，最后生成完整的HTML文档 */
   run(content) {
-    const headerRenderData = Object.assign(dirsConfig, pf); // 页头组件需要加载css/js等，因此需要比较多的变量
+    const headerRenderData = Object.assign({}, config, pf); // 页头组件需要加载css/js等，因此需要比较多的变量
     const renderData = {
       header: header(headerRenderData),
       footer: footer(),

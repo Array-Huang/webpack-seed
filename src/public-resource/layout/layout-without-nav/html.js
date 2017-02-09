@@ -3,7 +3,6 @@ const noJquery = require('withoutJqueryModule');
 const layout = require('./html.ejs');
 const header = require('../../components/header/html.ejs');
 const footer = require('../../components/footer/html.ejs');
-const dirsConfig = config.DIRS;
 
 const pf = {
   pageTitle: '',
@@ -16,7 +15,7 @@ const moduleExports = {
     return this;
   },
   run(content) {
-    const headerRenderData = Object.assign(dirsConfig, pf);
+    const headerRenderData = Object.assign({}, config, pf);
     const renderData = {
       header: header(headerRenderData),
       footer: footer(),
