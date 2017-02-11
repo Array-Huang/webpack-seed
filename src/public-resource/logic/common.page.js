@@ -1,4 +1,4 @@
-require('bootstrap/dist/css/bootstrap.min.css');
+// require('bootstrap/dist/css/bootstrap.min.css');
 require('iconfontDir/iconfont.css');
 require('lessDir/base.less');
 require('metisMenu/metisMenu.min');
