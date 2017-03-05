@@ -38,8 +38,12 @@ module.exports = {
         warnings: false,
       },
     }),
+    new webpack.LoaderOptionsPlugin({
+      options: {
+        postcss: require('./webpack-config/vendor/postcss.config.js'),
+      },
+    }),
   ],
   module: require('./webpack-config/module.product.config.js'), // 沿用业务代码的module配置
   resolve: require('./webpack-config/resolve.config.js'), // 沿用业务代码的resolve配置
-  postcss: require('./webpack-config/vendor/postcss.config.js'),
 };

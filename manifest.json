@@ -1,11 +1,25 @@
 {
   "name": "dll",
   "content": {
-    "./node_modules/jquery/dist/jquery.js": 3,
-    "./node_modules/expose-loader/index.js?jQuery!./node_modules/jquery/dist/jquery.js": 2,
-    "./node_modules/bootstrap/dist/css/bootstrap.min.css": 4,
-    "./node_modules/bootstrap/dist/js/bootstrap.min.js": 11,
-    "./vendor/metisMenu/metisMenu.min.js": 12,
-    "./vendor/metisMenu/metisMenu.min.css": 13
+    "./node_modules/jquery/dist/jquery.js": {
+      "id": 0,
+      "meta": {}
+    },
+    "./node_modules/bootstrap/dist/js/bootstrap.min.js": {
+      "id": 1,
+      "meta": {}
+    },
+    "./vendor/metisMenu/metisMenu.min.css": {
+      "id": 2,
+      "meta": {}
+    },
+    "./node_modules/bootstrap/dist/css/bootstrap.min.css": {
+      "id": 3,
+      "meta": {}
+    },
+    "./vendor/metisMenu/metisMenu.min.js": {
+      "id": 4,
+      "meta": {}
+    }
   }
 }
