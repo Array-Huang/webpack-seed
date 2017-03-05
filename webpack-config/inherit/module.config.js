@@ -1,22 +1,32 @@
 var dirVars = require('../base/dir-vars.config.js');
 module.exports = {
-  preLoaders: [{
-    test: /\.js$/,
-    loader: 'eslint-loader',
-    include: dirVars.srcRootDir,
-    exclude: [/bootstrap/],
-  }],
+  // preLoaders: [{
+  //   test: /\.js$/,
+  //   loader: 'eslint-loader',
+  //   include: dirVars.srcRootDir,
+  //   exclude: [/bootstrap/],
+  // }],
 
-  loaders: [
+  rules: [
     {
-      test: require.resolve('jquery'),
-      loader: 'expose-loader?$!expose-loader?jQuery',
+      test: /\.js$/,
+      enforce: 'pre',
+      loader: 'eslint-loader',
+      include: dirVars.srcRootDir,
+      exclude: /bootstrap/,
     },
+    // {
+    //   test: require.resolve('jquery'),
+    //   loader: 'expose-loader?$',
+    //   options: {
+    //     $: true,
+    //   },
+    // },
     {
       test: /\.js$/,
       include: dirVars.srcRootDir,
       loader: 'babel-loader',
-      query: {
+      options: {
         presets: [['es2015', { loose: true }]],
         cacheDirectory: true,
         plugins: ['transform-runtime'],
@@ -37,19 +47,30 @@ module.exports = {
       // 如下配置，将小于8192byte的图片转成base64码
       test: /\.(png|jpg|gif)$/,
       include: dirVars.srcRootDir,
-      loader: 'url-loader?limit=8192&name=./static/img/[hash].[ext]',
+      // loader: 'url-loader?limit=8192&name=./static/img/[hash].[ext]',
+      loader: 'url-loader',
+      options: {
+        limit: 8192,
+        name: './static/img/[hash].[ext]',
+      },
+    },
+    {
+      // 专供bootstrap方案使用的，忽略bootstrap自带的字体文件
+      test: /\.(woff|woff2|svg|eot|ttf)$/,
+      include: /glyphicons/,
+      loader: 'null-loader',
     },
     {
       // 专供iconfont方案使用的，后面会带一串时间戳，需要特别匹配到
       test: /\.(woff|woff2|svg|eot|ttf)\??.*$/,
       include: dirVars.srcRootDir,
-      loader: 'file-loader?name=static/fonts/[name].[ext]',
+      // exclude: /glyphicons/,
+      // loader: 'file-loader?name=static/fonts/[name].[ext]',
+      loader: 'file-loader',
+      options: {
+        name: 'static/fonts/[name].[ext]',
+      },
     },
-    {
-      // 专供bootstrap方案使用的，忽略bootstrap自带的字体文件
-      test: /\.(woff|woff2|svg|eot|ttf)$/,
-      include: /bootstrap/,
-      loader: 'null-loader',
-    },
+
   ],
 };

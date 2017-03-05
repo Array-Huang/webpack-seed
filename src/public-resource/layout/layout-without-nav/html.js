@@ -18,7 +18,7 @@ const moduleExports = {
     const componentRenderData = Object.assign({}, config, pf);
     const renderData = {
       header: header(componentRenderData),
-      footer: footer(),
+      footer: footer(componentRenderData),
       content,
     };
     return layout(renderData);

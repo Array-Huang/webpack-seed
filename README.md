@@ -1,31 +1,22 @@
 # webpack-seed
 
+## 注意
+本项目master分支已升级到`webpack2`版本，如需查看`webpack1`版本，请查看[webpack1_version](https://github.com/Array-Huang/webpack-seed/tree/webpack1_version)分支。
+
 ## 项目介绍
 本项目是一个基于webpack架构的**web app**脚手架，其特点如下：
 - 更适合多页应用。
 - 既可实现全后端分离，也可以生成后端渲染所需要的模板。
 - 引入layout和component的概念，方便多页面间对布局、组件的重用，妈妈再也不用担心我是选SPA呢还是Iframe了，咱们都！不！需！要！
 - 编译后的程序不依赖于外部的资源（包括css、font、图片等资源都做了迁移），可以整体放到CDN上。
-- 已整合兼容IE8+的跨域方案。
-- 整合Bootstrap3(利用webpack按需打包)及主题SB-Admin，但其实换掉也很简单，或者干脆不用CSS框架也行。
-- 不含Js框架（jQuery不算框架，谢谢）。在我原本的项目中，是用avalon2作为Js框架的，但考虑到脚手架本身并不需要Js框架，同时我也希望这个项目保持精简，因此决定剔除掉avalon2的部分。
-- 整合[iconfont][1]作为字体图标方案，需要什么图标就自己上iconfont那打包下载下来，替换掉`src/public-resource/iconfont`内的文件。
-- 本项目基于 ***webpack v1*** 和 ***webpack-dev-server v1***，全局和项目局部依赖都一样。
+- 整合Bootstrap3及主题SB-Admin，但其实换掉也很简单，或者干脆不用CSS框架也行。
+- 不含Js框架（jQuery不算框架，谢谢）。
+- 本项目基于 ***webpack v2*** 和 ***webpack-dev-server v2***，全局和项目局部依赖都一样。
 
 ## 使用说明
-- 全局安装webpack和webpack-dev-server和webpack-bundle-analyzer
-```bash
-$ npm install --global webpack@^1.13.2 webpack-dev-server@^1.16.2 webpack-bundle-analyzer@^2.1.1
-```
-
 - 本项目使用包管理工具NPM，因此需要先把本项目所依赖的包下载下来：
 ```
 $ npm install
-```
-
-- 编译程序，生成的所有代码在`build`目录内。
-```
-$ npm run build # 生成生产环境的代码。用npm run watch或npm run dev可生成开发环境的代码
 ```
 
 - 启动服务器，推荐直接使用webpack-dev-server
@@ -93,6 +84,8 @@ $ npm run start
 ```
 
 ## 更新日志
+### 2.0.0 (2017-03-05)
+webpack及webpack-dev-server升级到v2版本，并相应修改webpack配置文件。
 
 ### 1.4.1 (2017-01-24)
 支持js/css/less文件的热更新，但暂未支持模板文件。
@@ -124,5 +117,3 @@ $ npm run start
 
 ### 1.0.0
 由于此脚手架已具备投入生产环境的能力，故直接定义版本号为1.0.0
-
-  [1]: http://www.iconfont.cn/

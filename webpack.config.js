@@ -9,7 +9,5 @@ module.exports = {
 
   plugins: require('./webpack-config/plugins.product.config.js'),
 
-  eslint: require('./webpack-config/vendor/eslint.config.js'),
-
-  postcss: require('./webpack-config/vendor/postcss.config.js'),
+  externals: require('./webpack-config/externals.config.js'),
 };

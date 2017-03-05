@@ -24,7 +24,7 @@ const moduleExports = {
     const componentRenderData = Object.assign({}, config, pf); // 页头组件需要加载css/js等，因此需要比较多的变量
     const renderData = {
       header: header(componentRenderData),
-      footer: footer(),
+      footer: footer(componentRenderData),
       topNav: topNav(componentRenderData),
       sideMenu: sideMenu(componentRenderData),
       content,
