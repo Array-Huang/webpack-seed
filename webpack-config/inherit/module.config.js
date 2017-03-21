@@ -1,12 +1,6 @@
 var dirVars = require('../base/dir-vars.config.js');
+var eslintFormatter = require('eslint-friendly-formatter');
 module.exports = {
-  // preLoaders: [{
-  //   test: /\.js$/,
-  //   loader: 'eslint-loader',
-  //   include: dirVars.srcRootDir,
-  //   exclude: [/bootstrap/],
-  // }],
-
   rules: [
     {
       test: /\.js$/,
@@ -14,14 +8,11 @@ module.exports = {
       loader: 'eslint-loader',
       include: dirVars.srcRootDir,
       exclude: /bootstrap/,
+      options: {
+        formatter: eslintFormatter,
+        fix: true,
+      }
     },
-    // {
-    //   test: require.resolve('jquery'),
-    //   loader: 'expose-loader?$',
-    //   options: {
-    //     $: true,
-    //   },
-    // },
     {
       test: /\.js$/,
       include: dirVars.srcRootDir,
