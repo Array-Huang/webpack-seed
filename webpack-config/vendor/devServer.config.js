@@ -1,4 +1,4 @@
-module.export = {
+module.exports = {
   contentBase: './build/',
   host: 'localhost',
   port: 8080, // 默认8080
