@@ -16,7 +16,7 @@ var configPlugins = [
   /* 抽取出所有通用的部分 */
   new webpack.optimize.CommonsChunkPlugin({
     name: 'commons/commons',      // 需要注意的是，chunk的name不能相同！！！
-    filename: '[name]/bundle.js',
+    filename: '[name]/bundle.[hash].js',
     minChunks: 4,
   }),
   /* 抽取出chunk的css */
@@ -39,5 +39,7 @@ pageArr.forEach((page) => {
   });
   configPlugins.push(htmlPlugin);
 });
+
+
 
 module.exports = configPlugins;

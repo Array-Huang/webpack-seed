@@ -21,4 +21,8 @@ pluginsConfig.push(new webpack.LoaderOptionsPlugin({
   },
 }));
 
+/* HashedModuleIdsPlugin 这个插件，他是根据模块所在路径来映射其 module id ，
+这样就算引入了新的模块，也不会影响 module id 的值，只要模块的路径不改变的话。 */
+pluginsConfig.push(new webpack.HashedModuleIdsPlugin());
+
 module.exports = pluginsConfig;
