@@ -16,8 +16,13 @@ var configPlugins = [
   /* 抽取出所有通用的部分 */
   new webpack.optimize.CommonsChunkPlugin({
     name: 'commons/commons',      // 需要注意的是，chunk的name不能相同！！！
-    filename: '[name]/bundle.[hash].js',
+    filename: '[name]/bundle.[chunkhash].js',
     minChunks: 4,
+  }),
+  /* 抽取出webpack的runtime代码，避免稍微修改一下入口文件就会改动commonChunk，导致原本有效的浏览器缓存失效 */
+  new webpack.optimize.CommonsChunkPlugin({
+    name: 'manifest',
+    filename: 'commons/commons/manifest.[hash].js',
   }),
   /* 抽取出chunk的css */
   new ExtractTextPlugin('[name]/styles.css'),
@@ -33,7 +38,7 @@ pageArr.forEach((page) => {
   const htmlPlugin = new HtmlWebpackPlugin({
     filename: `${page}/page.html`,
     template: path.resolve(dirVars.pagesDir, `./${page}/html.js`),
-    chunks: [page, 'commons/commons'],
+    chunks: ['manifest', page, 'commons/commons'],
     hash: true, // 为静态资源生成hash值
     xhtml: true,
   });
