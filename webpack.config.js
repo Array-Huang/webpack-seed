@@ -1,3 +1,5 @@
+require('./npm-scripts/before-build.script');
+
 module.exports = {
   entry: require('./webpack-config/entry.config.js'),
 
