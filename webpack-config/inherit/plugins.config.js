@@ -45,6 +45,4 @@ pageArr.forEach((page) => {
   configPlugins.push(htmlPlugin);
 });
 
-
-
 module.exports = configPlugins;
