@@ -12,6 +12,8 @@ var configPlugins = [
     jQuery: 'jquery',
     'window.jQuery': 'jquery',
     'window.$': 'jquery',
+    Vue: 'vue',
+    vue: 'vue',
   }),
   /* 抽取出所有通用的部分 */
   new webpack.optimize.CommonsChunkPlugin({
@@ -19,13 +21,13 @@ var configPlugins = [
     filename: '[name]/bundle.[chunkhash].js',
     minChunks: 4,
   }),
-  /* 抽取出webpack的runtime代码，避免稍微修改一下入口文件就会改动commonChunk，导致原本有效的浏览器缓存失效 */
+  /* 抽取出webpack的runtime代码()，避免稍微修改一下入口文件就会改动commonChunk，导致原本有效的浏览器缓存失效 */
   new webpack.optimize.CommonsChunkPlugin({
-    name: 'manifest',
-    filename: 'commons/commons/manifest.[hash].js',
+    name: 'webpack-runtime',
+    filename: 'commons/commons/webpack-runtime.[hash].js',
   }),
   /* 抽取出chunk的css */
-  new ExtractTextPlugin('[name]/styles.css'),
+  new ExtractTextPlugin('[name]/styles.[chunkhash].css'),
   /* 配置好Dll */
   // new webpack.DllReferencePlugin({
   //   context: dirVars.staticRootDir, // 指定一个路径作为上下文环境，需要与DllPlugin的context参数保持一致，建议统一设置为项目根目录
@@ -38,7 +40,7 @@ pageArr.forEach((page) => {
   const htmlPlugin = new HtmlWebpackPlugin({
     filename: `${page}/page.html`,
     template: path.resolve(dirVars.pagesDir, `./${page}/html.js`),
-    chunks: ['manifest', page, 'commons/commons'],
+    chunks: ['webpack-runtime', page, 'commons/commons'],
     hash: true, // 为静态资源生成hash值
     xhtml: true,
   });
