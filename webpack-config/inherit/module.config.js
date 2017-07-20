@@ -59,7 +59,7 @@ module.exports = {
       // loader: 'file-loader?name=static/fonts/[name].[ext]',
       loader: 'file-loader',
       options: {
-        name: 'static/fonts/[name].[ext]',
+        name: 'static/fonts/[name].[hash].[ext]',
       },
     },
 
