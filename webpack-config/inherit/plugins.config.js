@@ -38,7 +38,7 @@ var configPlugins = [
   //   name: 'dll',  // 当前Dll的所有内容都会存放在这个参数指定变量名的一个全局变量下，注意与DllPlugin的name参数保持一致
   // }),
   new HashOutput({
-    manifestFiles: 'webpack-runtime',
+    manifestFiles: 'webpack-runtime', // 指定包含 manifest 在内的 chunk
   }),
 ];
 
