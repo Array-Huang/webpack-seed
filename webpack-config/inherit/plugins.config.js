@@ -5,7 +5,10 @@ var path = require('path');
 var dirVars = require('../base/dir-vars.config.js');
 var pageArr = require('../base/page-entries.config.js');
 
+var HashOutput = require('webpack-plugin-hash-output');
+
 var configPlugins = [
+
   /* 全局shimming */
   new webpack.ProvidePlugin({
     $: 'jquery',
@@ -34,6 +37,9 @@ var configPlugins = [
   //   manifest: require('../../manifest.json'), // 指定manifest.json
   //   name: 'dll',  // 当前Dll的所有内容都会存放在这个参数指定变量名的一个全局变量下，注意与DllPlugin的name参数保持一致
   // }),
+  new HashOutput({
+    manifestFiles: 'webpack-runtime',
+  }),
 ];
 
 pageArr.forEach((page) => {
