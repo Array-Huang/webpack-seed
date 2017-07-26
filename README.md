@@ -84,6 +84,9 @@ $ npm run start
 ```
 
 ## 更新日志
+### 2.1.0 (2017-07-26)
+更新了一批浏览器缓存相关配置，详情请看[webpack多页应用架构系列（十六）：善用浏览器缓存，该去则去，该留则留](https://segmentfault.com/a/1190000010317802)
+
 ### 2.0.0 (2017-03-05)
 webpack及webpack-dev-server升级到v2版本，并相应修改webpack配置文件。
 
