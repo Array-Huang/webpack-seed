@@ -9,7 +9,6 @@ pluginsConfig.push(new webpack.LoaderOptionsPlugin({
   options: {
     postcss: require('./vendor/postcss.config.js'),
     eslint: require('./vendor/eslint.config.js'),
-    devServer: require('./vendor/devServer.config.js'),
   },
 }));
 

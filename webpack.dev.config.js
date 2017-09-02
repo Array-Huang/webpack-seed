@@ -12,4 +12,6 @@ module.exports = {
   plugins: require('./webpack-config/plugins.dev.config.js'),
 
   externals: require('./webpack-config/externals.config.js'),
+
+  devServer: require('./webpack-config/devServer.config.js'),
 };
