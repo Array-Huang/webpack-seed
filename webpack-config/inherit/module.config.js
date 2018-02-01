@@ -11,7 +11,7 @@ module.exports = {
       options: {
         formatter: eslintFormatter,
         fix: true,
-      }
+      },
     },
     {
       test: /\.js$/,

@@ -3,8 +3,12 @@ var pluginsConfig = require('./inherit/plugins.config.js');
 
 /* webpack1下，用了压缩插件会导致所有loader添加min配置，而autoprefixser也被定格到某个browers配置 */
 pluginsConfig.push(new webpack.optimize.UglifyJsPlugin({
+  ie8: true,
   compress: {
     warnings: false,
+  },
+  mangle: {
+    safari10: true,
   },
 }));
 
